@@ -1,0 +1,42 @@
+$primary-color: hsl(5, 85%, 63%);
+$secondary-color: hsl(236, 13%, 42%);
+$tertiary-color: hsl(35, 77%, 62%);
+$bg-color: hsl(240, 100%, 5%);
+
+.noticia {
+background-color: $bg-color;
+}
+
+.__box_content {
+padding: 1rem 1.5rem;
+}
+
+div.border {
+border: 1px solid $secondary-color;
+margin-top: 20px;
+}
+
+.__box_content > h4 {
+color: white;
+font-size: 18px;
+}
+
+.__box_content > h4:hover {
+color: $primary-color;
+cursor: pointer;
+}
+
+.__box_content > p {
+color: $secondary-color;
+padding-top: 10px;
+line-height: 25px;
+}
+
+h2.h2o{
+margin-block-start: 0;
+margin-block-end: 0;
+color: $tertiary-color;
+padding-top: 10px;
+font-size: 30px;
+padding-left: 1.5rem;
+}

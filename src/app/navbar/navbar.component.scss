@@ -1,0 +1,88 @@
+$font-family: "Inter", sans-serif;
+$primary-color: hsl(5, 85%, 63%);
+$header-height: 80px;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+header {
+display: flex;
+justify-content: space-around;
+height: $header-height;
+padding-top: 20px;
+}
+
+header > .__imageCont {
+width: 50px;
+}
+
+.__imageCont > img {
+width: 100%;
+}
+
+nav ul > li {
+display: inline-block;
+padding: 0px 20px;
+list-style-type: none;
+}
+
+nav ul > li a[href] {
+text-decoration: none;
+color: black;
+}
+
+nav ul > li a[href]:hover {
+color: $primary-color;
+}
+
+header > img[src*="icon-menu"] {
+display: none;
+}
+
+@media (min-width: 901px) {
+header > img[src= "../../assets/images/icon-menu.svg"] {
+display: none !important;
+}
+
+header > img[src="../../assets/images/icon-menu-close.svg"] {
+display: none !important;
+}
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+header > img[src="../../assets/images/icon-menu.svg"] {
+display: block;
+width: 50px;
+height: 35px;
+}
+
+header > img[src="../../assets/images/icon-menu-close.svg"] {
+width: 40px;
+height: 40px;
+}
+
+nav > ul {
+position: fixed;
+height: 100vh;
+background-color: #ffffff;
+top: $header-height;
+right: -100%;
+transition: all 1s ease-out;
+}
+
+nav ul > li {
+margin: 50px 0px;
+line-height: 30px;
+display: block;
+}
+
+nav > ul.show {
+right: -30%;
+height: 100%;
+width: 100%;
+}
+
+ul > li a {
+font-size: 20px;
+color: #f3f3f3;
+}
+}

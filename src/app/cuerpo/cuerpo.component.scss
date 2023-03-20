@@ -1,0 +1,127 @@
+// Variables
+$primary-color: hsl(5, 85%, 63%);
+$secondary-color: hsl(240, 100%, 5%);
+$border-color: hsl(236, 13%, 42%);
+$image-desktop: url(../../assets/images/image-web-3-desktop.jpg);
+$image-mobile: url(../../assets/images/image-web-3-mobile.jpg);
+$button-padding: 10px 30px;
+
+// Styles
+main {
+display: grid;
+grid-template-areas:
+"desktop__image desktop__image aside"
+"Left__Article Right__Article aside";
+gap: 1.5rem;
+place-content: center;
+width: 900px;
+margin-inline: auto;
+}
+
+main > section {
+grid-area: desktop__image;
+}
+
+section > img {
+width: 100%;
+}
+
+.imagebg {
+background-image: $image-desktop;
+background-size: cover;
+background-position: center;
+height: 250px;
+}
+
+article:has(h1) {
+grid-area: Left__Article;
+font-size: 2rem;
+width: 300px;
+}
+
+article:has(p) {
+grid-area: Right__Article;
+line-height: 25px;
+}
+
+aside:has(.__box_content) {
+grid-area: aside;
+}
+
+button {
+padding: $button-padding;
+background-color: $primary-color;
+color: #f3f3f3;
+border: none;
+margin-top: 30px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: $secondary-color;
+}
+
+@media (max-width: 912px) {
+main {
+width: 800px;
+}
+
+section:has(.__box) {
+width: 800px;
+}
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+main {
+grid-template-areas:
+"desktop__image"
+"Left__Article"
+"Right__Article"
+"aside";
+width: 300px;
+}
+
+.imagebg {
+background-image: $image-mobile;
+}
+
+section:has(.__box) {
+width: 300px;
+}
+}
+
+// Border class
+div.border {
+border: 1px solid $border-color;
+margin-top: 20px;
+}
+
+// Box content styles
+.__box_content {
+padding: 1rem 1.5rem;
+
+h4 {
+color: $secondary-color;
+font-size: 18px;
+&:hover {
+color: $primary-color;
+cursor: pointer;
+}
+}
+
+p {
+color: $border-color;
+padding-top: 10px;
+line-height: 25px;
+}
+}
+
+// H2 style
+h2.h2o{
+margin-block-start: 0;
+margin-block-end: 0;
+color: hsl(35, 77%, 62%);
+padding-top: 10px;
+font-size: 30px;
+padding-left: 1.5rem;
+}

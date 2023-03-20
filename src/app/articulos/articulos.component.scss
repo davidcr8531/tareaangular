@@ -1,0 +1,79 @@
+$primary-color: hsl(233, 8%, 79%);
+$secondary-color: hsl(5, 85%, 63%);
+$box-gap: 1.5rem;
+$box-width: 900px;
+$box-width-mobile: 300px;
+$box-margin: 60px;
+
+section:has(.__box) {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+margin-top: $box-margin;
+gap: $box-gap;
+margin-bottom: $box-margin;
+width: $box-width;
+margin-inline: auto;
+
+@media (max-width: 900px) and (orientation: portrait) {
+width: $box-width-mobile;
+}
+}
+
+section > .__box {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+align-items: center;
+gap: $box-gap;
+}
+
+div.__box > img {
+width: 100%;
+}
+
+.content__img {
+height: 100%;
+}
+
+div.content__img > h2 {
+color: $primary-color;
+}
+
+div.content__img > h4 {
+padding: 20px 0px;
+
+&:hover {
+color: $secondary-color;
+cursor: pointer;
+}
+}
+
+div.content__img > p {
+line-height: 20px;
+color: $primary-color;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+section:has(.__box) {
+width: $box-width-mobile;
+}
+
+.__box:has([src="../../assets/images/image-retro-pcs.jpg"]) {
+grid-column-start: 1;
+grid-row-start: 1;
+grid-row-end: 2;
+grid-column-end: 4;
+}
+
+.__box:has([src="../../assets/images/image-top-laptops.jpg"]) {
+grid-column-start: 1;
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-end: 4;
+}
+.__box:has([src="./assets/images/image-gaming-growth.jpg"]) {
+grid-column-start: 1;
+grid-row-start: 3;
+grid-row-end: 4;
+grid-column-end: 4;
+}
+}
